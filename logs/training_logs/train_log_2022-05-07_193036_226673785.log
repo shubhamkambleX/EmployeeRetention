@@ -1,0 +1,64 @@
+2022-05-07 19:30:36,547 : INFO : Start of Training
+2022-05-07 19:30:36,547 : INFO : Run_id:2022-05-07_193036_226673785
+2022-05-07 19:30:36,547 : INFO : Start of Data Load, validation and transformation
+2022-05-07 19:30:36,548 : INFO : Start of Archiving Old Rejected Files...
+2022-05-07 19:30:36,548 : INFO : End of Archiving Old Rejected Files...
+2022-05-07 19:30:36,548 : INFO : Start of Archiving Old Validated Files...
+2022-05-07 19:30:36,549 : INFO : End of Archiving Old Validated Files...
+2022-05-07 19:30:36,549 : INFO : Start of Archiving Old Processed Files...
+2022-05-07 19:30:36,549 : INFO : End of Archiving Old Processed Files...
+2022-05-07 19:30:36,549 : INFO : Start of Archiving Old Result Files...
+2022-05-07 19:30:36,550 : INFO : End of Archiving Old Result Files...
+2022-05-07 19:30:36,550 : INFO : Start of Reading values From Schema...
+2022-05-07 19:30:36,551 : INFO : End of Reading values From Schema...
+2022-05-07 19:30:36,551 : INFO : Start of Validating Column Length...
+2022-05-07 19:30:36,574 : INFO : End of Validating Column Length...
+2022-05-07 19:30:36,574 : INFO : Start of Validating Missing Values...
+2022-05-07 19:30:36,591 : INFO : End of Validating Missing Values...
+2022-05-07 19:30:36,591 : INFO : Start of Replacing Missing Values with NULL...
+2022-05-07 19:30:36,640 : INFO : hr_employee_churn_data.csv: File Transformed successfully!!
+2022-05-07 19:30:36,640 : INFO : End of Replacing Missing Values with NULL...
+2022-05-07 19:30:36,640 : INFO : Start of creating Table
+2022-05-07 19:30:36,640 : INFO : Opened training database successfully
+2022-05-07 19:30:36,656 : INFO : Exception raise while creating table: near "TABLEtraining_raw_data_t": syntax error 
+2022-05-07 19:30:36,656 : ERROR : Unsuccessful End of Data Load, validation and transformation
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\database\database_operation.py", line 47, in create_table
+    conn.execute("ALTER TABLE" +table_name+" ADD COLUMN {column_name} {dataType}".format(column_name=key,dataType=type))
+sqlite3.OperationalError: near "TABLEtraining_raw_data_t": syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 196, in validate_trainset
+    self.dbOperation.create_table('training', 'training_raw_data_t', column_names)
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\database\database_operation.py", line 56, in create_table
+    raise e
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\database\database_operation.py", line 50, in create_table
+    conn.execute("CREATE TABLE" +table_name+ "({column_name} {dataType})".format(column_name=key,dataType=type))
+sqlite3.OperationalError: near "TABLEtraining_raw_data_t": syntax error
+2022-05-07 19:30:36,656 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\database\database_operation.py", line 47, in create_table
+    conn.execute("ALTER TABLE" +table_name+" ADD COLUMN {column_name} {dataType}".format(column_name=key,dataType=type))
+sqlite3.OperationalError: near "TABLEtraining_raw_data_t": syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 196, in validate_trainset
+    self.dbOperation.create_table('training', 'training_raw_data_t', column_names)
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\database\database_operation.py", line 56, in create_table
+    raise e
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\database\database_operation.py", line 50, in create_table
+    conn.execute("CREATE TABLE" +table_name+ "({column_name} {dataType})".format(column_name=key,dataType=type))
+sqlite3.OperationalError: near "TABLEtraining_raw_data_t": syntax error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\training\train_model.py", line 28, in training_model
+    self.loadValidate.validate_trainset()
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 206, in validate_trainset
+    raise Exception
+Exception

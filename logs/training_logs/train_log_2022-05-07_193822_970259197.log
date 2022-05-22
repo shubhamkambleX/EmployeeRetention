@@ -1,0 +1,89 @@
+2022-05-07 19:38:22,446 : INFO : Start of Training
+2022-05-07 19:38:22,446 : INFO : Run_id:2022-05-07_193822_970259197
+2022-05-07 19:38:22,446 : INFO : Start of Data Load, validation and transformation
+2022-05-07 19:38:22,446 : INFO : Start of Archiving Old Rejected Files...
+2022-05-07 19:38:22,446 : INFO : End of Archiving Old Rejected Files...
+2022-05-07 19:38:22,446 : INFO : Start of Archiving Old Validated Files...
+2022-05-07 19:38:22,447 : INFO : End of Archiving Old Validated Files...
+2022-05-07 19:38:22,447 : INFO : Start of Archiving Old Processed Files...
+2022-05-07 19:38:22,447 : INFO : End of Archiving Old Processed Files...
+2022-05-07 19:38:22,447 : INFO : Start of Archiving Old Result Files...
+2022-05-07 19:38:22,449 : INFO : End of Archiving Old Result Files...
+2022-05-07 19:38:22,449 : INFO : Start of Reading values From Schema...
+2022-05-07 19:38:22,449 : INFO : End of Reading values From Schema...
+2022-05-07 19:38:22,449 : INFO : Start of Validating Column Length...
+2022-05-07 19:38:22,465 : INFO : End of Validating Column Length...
+2022-05-07 19:38:22,466 : INFO : Start of Validating Missing Values...
+2022-05-07 19:38:22,472 : INFO : End of Validating Missing Values...
+2022-05-07 19:38:22,472 : INFO : Start of Replacing Missing Values with NULL...
+2022-05-07 19:38:22,521 : INFO : hr_employee_churn_data.csv: File Transformed successfully!!
+2022-05-07 19:38:22,521 : INFO : End of Replacing Missing Values with NULL...
+2022-05-07 19:38:22,521 : INFO : Start of creating Table
+2022-05-07 19:38:22,521 : INFO : Opened training database successfully
+2022-05-07 19:38:22,537 : INFO : CREATE TABLE training_raw_data_t column_name
+2022-05-07 19:38:22,553 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,553 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,568 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,568 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,584 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,600 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,616 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,616 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,632 : INFO : Alter tabletraining_raw_data_t ADD COLUMN
+2022-05-07 19:38:22,632 : INFO : End of Creating Table
+2022-05-07 19:38:22,632 : INFO : Opened training database successfully
+2022-05-07 19:38:22,632 : INFO : Start inserting files in table
+2022-05-07 19:40:52,533 : INFO : End of Inserting Data into Table...
+2022-05-07 19:40:52,533 : INFO : Start of Exporting Data into CSV...
+2022-05-07 19:40:52,533 : INFO : Opened training database successfully
+2022-05-07 19:40:52,782 : INFO : End of Exporting Data into CSV...
+2022-05-07 19:40:52,798 : INFO : Start of Moving Processed Files...
+2022-05-07 19:40:52,798 : INFO : Moved the already processed file hr_employee_churn_data.csv
+2022-05-07 19:40:52,798 : INFO : End of Moving Processed Files...
+2022-05-07 19:40:52,798 : INFO : End of Data Load, validation and transformation
+2022-05-07 19:40:52,798 : INFO : Start of Preprocessing...
+2022-05-07 19:40:52,798 : INFO : Start of reading dataset...
+2022-05-07 19:40:52,838 : INFO : End of reading dataset...
+2022-05-07 19:40:52,838 : INFO : Start of Droping Columns...
+2022-05-07 19:40:52,838 : ERROR : Exception raised while Droping Columns:'Preprocessor' object has no attribute 'columns'
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 28, in drop_columns
+    self.useful_data = self.data.drop(labels=self.columns, axis=1)  # drop the labels specified in the columns
+AttributeError: 'Preprocessor' object has no attribute 'columns'
+2022-05-07 19:40:52,838 : ERROR : Unsuccessful End of Preprocessing...
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 28, in drop_columns
+    self.useful_data = self.data.drop(labels=self.columns, axis=1)  # drop the labels specified in the columns
+AttributeError: 'Preprocessor' object has no attribute 'columns'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 126, in preprocess_trainset
+    data = self.drop_columns(data, ['empid'])
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 33, in drop_columns
+    raise Exception()
+Exception
+2022-05-07 19:40:52,838 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 28, in drop_columns
+    self.useful_data = self.data.drop(labels=self.columns, axis=1)  # drop the labels specified in the columns
+AttributeError: 'Preprocessor' object has no attribute 'columns'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 126, in preprocess_trainset
+    data = self.drop_columns(data, ['empid'])
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 33, in drop_columns
+    raise Exception()
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\training\train_model.py", line 30, in training_model
+    self.X, self.y = self.preProcess.preprocess_trainset()
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\preprocess\preprocessor.py", line 143, in preprocess_trainset
+    raise Exception
+Exception

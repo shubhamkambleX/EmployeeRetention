@@ -1,0 +1,10 @@
+click
+apscheduler
+flask>=0.9
+sqlalchemy>=1.1.9
+configparser
+psutil
+colorhash
+numpy
+pytz
+tzlocal

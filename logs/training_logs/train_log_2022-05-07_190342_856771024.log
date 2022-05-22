@@ -1,0 +1,54 @@
+2022-05-07 19:03:42,722 : INFO : Start of Training
+2022-05-07 19:03:42,723 : INFO : Run_id:2022-05-07_190342_856771024
+2022-05-07 19:03:42,723 : INFO : Start of Data Load, validation and transformation
+2022-05-07 19:03:42,723 : INFO : Start of Archiving Old Rejected Files...
+2022-05-07 19:03:42,723 : INFO : End of Archiving Old Rejected Files...
+2022-05-07 19:03:42,723 : INFO : Start of Archiving Old Validated Files...
+2022-05-07 19:03:42,724 : INFO : End of Archiving Old Validated Files...
+2022-05-07 19:03:42,724 : INFO : Start of Archiving Old Processed Files...
+2022-05-07 19:03:42,725 : INFO : End of Archiving Old Processed Files...
+2022-05-07 19:03:42,725 : INFO : Start of Archiving Old Result Files...
+2022-05-07 19:03:42,725 : INFO : End of Archiving Old Result Files...
+2022-05-07 19:03:42,725 : INFO : Start of Reading values From Schema...
+2022-05-07 19:03:42,726 : ERROR : KeyError raised while Reading values From Schema
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 25, in values_from_schema
+    number_of_columns = dic['NumberofColumns']
+KeyError: 'NumberofColumns'
+2022-05-07 19:03:42,728 : ERROR : Unsuccessful End of Data Load, validation and transformation
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 25, in values_from_schema
+    number_of_columns = dic['NumberofColumns']
+KeyError: 'NumberofColumns'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 188, in validate_trainset
+    column_names, number_of_columns = self.values_from_schema('schema_train')
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 32, in values_from_schema
+    raise KeyError
+KeyError
+2022-05-07 19:03:42,729 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 25, in values_from_schema
+    number_of_columns = dic['NumberofColumns']
+KeyError: 'NumberofColumns'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 188, in validate_trainset
+    column_names, number_of_columns = self.values_from_schema('schema_train')
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 32, in values_from_schema
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\training\train_model.py", line 28, in training_model
+    self.loadValidate.validate_trainset()
+  File "D:\Shubham\Project\End_to_End_project_emp_retention\apps\ingestion\load_validate.py", line 206, in validate_trainset
+    raise Exception
+Exception
